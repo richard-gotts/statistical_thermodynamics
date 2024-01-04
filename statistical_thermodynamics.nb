@@ -1,0 +1,1542 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 12.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     63407,       1534]
+NotebookOptionsPosition[     59079,       1445]
+NotebookOutlinePosition[     59687,       1467]
+CellTagsIndexPosition[     59644,       1464]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["Two-level system", "Subsection",
+ CellChangeTimes->{{3.855231804965477*^9, 
+  3.855231810201353*^9}},ExpressionUUID->"7a1b6c6d-8dfe-4e10-a656-\
+472e5b501f88"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"q", "[", 
+   RowBox[{"g0_", ",", "g1_", ",", "\[Theta]_", ",", "T_"}], "]"}], "=", 
+  RowBox[{"g0", "+", 
+   RowBox[{"g1", " ", 
+    RowBox[{"Exp", "[", 
+     RowBox[{
+      RowBox[{"-", "\[Theta]"}], "/", "T"}], "]"}]}]}]}]], "Input",
+ CellChangeTimes->{{3.8552318543134108`*^9, 3.855232007595748*^9}, {
+  3.8552320568296995`*^9, 3.8552320704412327`*^9}, {3.8552380433060913`*^9, 
+  3.8552380436706686`*^9}, {3.8552566342793465`*^9, 3.855256640426137*^9}},
+ CellLabel->"In[22]:=",ExpressionUUID->"ae6526b9-4649-4cf8-83be-17755da64331"],
+
+Cell[BoxData[
+ RowBox[{"g0", "+", 
+  RowBox[{
+   SuperscriptBox["\[ExponentialE]", 
+    RowBox[{"-", 
+     FractionBox["\[Theta]", "T"]}]], " ", "g1"}]}]], "Output",
+ CellChangeTimes->{
+  3.855232072337035*^9, {3.855237872175249*^9, 3.855237878740506*^9}, 
+   3.85523804671571*^9, 3.8552382958953953`*^9, 3.855256643069648*^9, 
+   3.855259857071746*^9},
+ CellLabel->"Out[22]=",ExpressionUUID->"9dc8b2dc-23ce-4c39-b266-5e0d6b75417e"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"U", "[", 
+   RowBox[{"g0_", ",", "g1_", ",", "\[Theta]_", ",", "T_"}], "]"}], "=", 
+  RowBox[{"8.3145", " ", 
+   FractionBox[
+    RowBox[{
+     SuperscriptBox["T", "2"], " "}], 
+    RowBox[{"q", "[", 
+     RowBox[{"g0", ",", "g1", ",", "\[Theta]", ",", "T"}], "]"}]], " ", 
+   RowBox[{"D", "[", 
+    RowBox[{
+     RowBox[{"q", "[", 
+      RowBox[{"g0", ",", "g1", ",", "\[Theta]", ",", "T"}], "]"}], ",", "T"}],
+     "]"}], " "}]}]], "Input",
+ CellChangeTimes->{{3.855232574547325*^9, 3.8552326206010323`*^9}, {
+  3.8552328380578113`*^9, 3.8552329602200074`*^9}, {3.8552330278536663`*^9, 
+  3.8552330558807697`*^9}},
+ CellLabel->"In[23]:=",ExpressionUUID->"baf5b340-a447-4564-8172-2bd0b26ff6d5"],
+
+Cell[BoxData[
+ FractionBox[
+  RowBox[{"8.3145`", " ", 
+   SuperscriptBox["\[ExponentialE]", 
+    RowBox[{"-", 
+     FractionBox["\[Theta]", "T"]}]], " ", "g1", " ", "\[Theta]"}], 
+  RowBox[{"g0", "+", 
+   RowBox[{
+    SuperscriptBox["\[ExponentialE]", 
+     RowBox[{"-", 
+      FractionBox["\[Theta]", "T"]}]], " ", "g1"}]}]]], "Output",
+ CellChangeTimes->{3.8552330651998334`*^9, 3.855237878848702*^9, 
+  3.8552380610551386`*^9, 3.855238296057974*^9, 3.8552566449071817`*^9, 
+  3.855259857134508*^9},
+ CellLabel->"Out[23]=",ExpressionUUID->"e3cfdf4e-aee9-44a0-b239-ea1bb446cbf9"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Cv", "[", 
+   RowBox[{"g0_", ",", "g1_", ",", "\[Theta]_", ",", "T_"}], "]"}], "=", 
+  RowBox[{"D", "[", 
+   RowBox[{
+    RowBox[{"U", "[", 
+     RowBox[{"g0", ",", "g1", ",", "\[Theta]", ",", "T"}], "]"}], ",", "T"}], 
+   "]"}]}]], "Input",
+ CellChangeTimes->{{3.8552333662097*^9, 3.8552334183577414`*^9}, {
+  3.8552335132158203`*^9, 3.855233532061348*^9}},
+ CellLabel->"In[24]:=",ExpressionUUID->"98cfa558-5cee-4e8a-9d44-5effc9f33ca6"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"-", 
+   FractionBox[
+    RowBox[{"8.3145`", " ", 
+     SuperscriptBox["\[ExponentialE]", 
+      RowBox[{"-", 
+       FractionBox[
+        RowBox[{"2", " ", "\[Theta]"}], "T"]}]], " ", 
+     SuperscriptBox["g1", "2"], " ", 
+     SuperscriptBox["\[Theta]", "2"]}], 
+    RowBox[{
+     SuperscriptBox[
+      RowBox[{"(", 
+       RowBox[{"g0", "+", 
+        RowBox[{
+         SuperscriptBox["\[ExponentialE]", 
+          RowBox[{"-", 
+           FractionBox["\[Theta]", "T"]}]], " ", "g1"}]}], ")"}], "2"], " ", 
+     SuperscriptBox["T", "2"]}]]}], "+", 
+  FractionBox[
+   RowBox[{"8.3145`", " ", 
+    SuperscriptBox["\[ExponentialE]", 
+     RowBox[{"-", 
+      FractionBox["\[Theta]", "T"]}]], " ", "g1", " ", 
+    SuperscriptBox["\[Theta]", "2"]}], 
+   RowBox[{
+    RowBox[{"(", 
+     RowBox[{"g0", "+", 
+      RowBox[{
+       SuperscriptBox["\[ExponentialE]", 
+        RowBox[{"-", 
+         FractionBox["\[Theta]", "T"]}]], " ", "g1"}]}], ")"}], " ", 
+    SuperscriptBox["T", "2"]}]]}]], "Output",
+ CellChangeTimes->{3.8552335382817154`*^9, 3.8552378788991575`*^9, 
+  3.8552380651911345`*^9, 3.8552382961265793`*^9, 3.8552566464103117`*^9, 
+  3.855259857187996*^9},
+ CellLabel->"Out[24]=",ExpressionUUID->"9840c34d-c032-4d07-8a13-e5ec83e85456"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Manipulate", "[", 
+  RowBox[{
+   RowBox[{"Show", "[", 
+    RowBox[{
+     RowBox[{"Plot", "[", 
+      RowBox[{
+       RowBox[{"q", "[", 
+        RowBox[{"g0", ",", "g1", ",", "\[Theta]", ",", "T"}], "]"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"T", ",", "0", ",", "Tmax"}], "}"}], ",", 
+       RowBox[{"PlotRange", "\[Rule]", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"{", 
+           RowBox[{"0", ",", "Tmax"}], "}"}], ",", 
+          RowBox[{"{", 
+           RowBox[{"0", ",", "qmax"}], "}"}]}], "}"}]}], ",", 
+       RowBox[{"AxesLabel", "\[Rule]", 
+        RowBox[{"{", 
+         RowBox[{
+         "\"\<\!\(\*StyleBox[\"T\",FontSlant->\"Italic\"]\) / K\>\"", ",", 
+          "\"\<\!\(\*StyleBox[\"q\",FontSlant->\"Italic\"]\)\>\""}], "}"}]}], 
+       ",", 
+       RowBox[{"PlotStyle", "\[Rule]", 
+        RowBox[{"{", 
+         RowBox[{"{", 
+          RowBox[{"Black", ",", 
+           RowBox[{"AbsoluteThickness", "[", "1", "]"}]}], "}"}], "}"}]}], 
+       ",", 
+       RowBox[{
+       "PlotLabel", "\[Rule]", 
+        "\"\<Temperature dependence of the partition function for a two-level \
+system\>\""}]}], "]"}], ",", 
+     RowBox[{"Graphics", "[", 
+      RowBox[{"{", 
+       RowBox[{"Red", ",", 
+        RowBox[{"Line", "[", 
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{"\[Theta]", ",", "0"}], "}"}], ",", 
+           RowBox[{"{", 
+            RowBox[{"\[Theta]", ",", "qmax"}], "}"}]}], "}"}], "]"}]}], "}"}],
+       "]"}]}], "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+      "g0", ",", "1", ",", 
+       "\"\<\!\(\*SubscriptBox[StyleBox[\"g\",FontSlant->\"Italic\"], \
+\"0\"]\)\>\""}], "}"}], ",", "1", ",", "4", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+      "g1", ",", "1", ",", 
+       "\"\<\!\(\*SubscriptBox[StyleBox[\"g\",FontSlant->\"Italic\"], \
+\"1\"]\)\>\""}], "}"}], ",", "1", ",", "4", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+      "\[Theta]", ",", "50", ",", 
+       "\"\<\!\(\*StyleBox[\"\[Theta]\",FontSlant->\"Italic\"]\) / K\>\""}], 
+      "}"}], ",", "0", ",", "100"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+      "Tmax", ",", "1000", ",", 
+       "\"\<\!\(\*SubscriptBox[StyleBox[\"T\",FontSlant->\"Italic\"], \
+\"max\"]\) / K\>\""}], "}"}], ",", "0", ",", "3000"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+      "qmax", ",", "2", ",", 
+       "\"\<\!\(\*SubscriptBox[StyleBox[\"q\",FontSlant->\"Italic\"], \
+\"max\"]\)\>\""}], "}"}], ",", "0", ",", "8"}], "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.8552342830197306`*^9, 3.8552342875921435`*^9}, {
+   3.8552343228787518`*^9, 3.8552343233543377`*^9}, {3.855234359299114*^9, 
+   3.8552343738924503`*^9}, {3.8552345200114703`*^9, 3.855234594483777*^9}, {
+   3.855234662456718*^9, 3.855234665726575*^9}, {3.855234792118843*^9, 
+   3.855234822531852*^9}, {3.855234893299659*^9, 3.8552349954704833`*^9}, {
+   3.855235056994362*^9, 3.8552351348077445`*^9}, {3.855235172669509*^9, 
+   3.855235178243617*^9}, {3.855235270776573*^9, 3.855235272048232*^9}, {
+   3.8552353825489283`*^9, 3.8552354015239105`*^9}, {3.855235453144083*^9, 
+   3.8552354806641254`*^9}, {3.855235518496416*^9, 3.8552355195710735`*^9}, {
+   3.8552355513716536`*^9, 3.855235593291271*^9}, {3.8552356454185534`*^9, 
+   3.855235647156385*^9}, {3.855235715814247*^9, 3.8552358001786366`*^9}, {
+   3.855235934759564*^9, 3.8552359720894794`*^9}, {3.8552360639879093`*^9, 
+   3.855236093914315*^9}, {3.855236128736173*^9, 3.855236221271118*^9}, {
+   3.85523642059615*^9, 3.855236439810384*^9}, {3.855236488298919*^9, 
+   3.855236489897443*^9}, {3.855236578739789*^9, 3.855236621503296*^9}, 
+   3.8552367043455753`*^9, {3.8552367881096373`*^9, 3.855236846034051*^9}, {
+   3.855236944843773*^9, 3.8552369709766965`*^9}, 3.8552371594156375`*^9, {
+   3.8552372062078795`*^9, 3.8552372404203014`*^9}, {3.8552373692386155`*^9, 
+   3.855237372373883*^9}, {3.8552375072166567`*^9, 3.8552375883671637`*^9}, {
+   3.8552376322091503`*^9, 3.855237633771923*^9}, {3.8552376924839025`*^9, 
+   3.855237746293705*^9}, {3.8552383734273963`*^9, 3.8552384179473295`*^9}, {
+   3.85523879714183*^9, 3.855238797594886*^9}, {3.8552456448976946`*^9, 
+   3.8552456642440624`*^9}},
+ CellLabel->"In[25]:=",ExpressionUUID->"3da60793-d344-47f8-938e-386b1fa54cee"],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`g0$$ = 1, $CellContext`g1$$ = 
+    1, $CellContext`qmax$$ = 2, $CellContext`Tmax$$ = 
+    999.9999999999997, $CellContext`\[Theta]$$ = 50, Typeset`show$$ = True, 
+    Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
+    Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
+    "\"untitled\"", Typeset`specs$$ = {{{
+       Hold[$CellContext`g0$$], 1, 
+       "\!\(\*SubscriptBox[StyleBox[\"g\",FontSlant->\"Italic\"], \"0\"]\)"}, 
+      1, 4, 1}, {{
+       Hold[$CellContext`g1$$], 1, 
+       "\!\(\*SubscriptBox[StyleBox[\"g\",FontSlant->\"Italic\"], \"1\"]\)"}, 
+      1, 4, 1}, {{
+       Hold[$CellContext`\[Theta]$$], 50, 
+       "\!\(\*StyleBox[\"\[Theta]\",FontSlant->\"Italic\"]\) / K"}, 0, 100}, {{
+       Hold[$CellContext`Tmax$$], 1000, 
+       "\!\(\*SubscriptBox[StyleBox[\"T\",FontSlant->\"Italic\"], \"max\"]\) \
+/ K"}, 0, 3000}, {{
+       Hold[$CellContext`qmax$$], 2, 
+       "\!\(\*SubscriptBox[StyleBox[\"q\",FontSlant->\"Italic\"], \
+\"max\"]\)"}, 0, 8}}, Typeset`size$$ = {259.2, {85., 88.52424531239026}}, 
+    Typeset`update$$ = 0, Typeset`initDone$$, Typeset`skipInitDone$$ = True}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, 
+      "Variables" :> {$CellContext`g0$$ = 1, $CellContext`g1$$ = 
+        1, $CellContext`qmax$$ = 2, $CellContext`Tmax$$ = 
+        1000, $CellContext`\[Theta]$$ = 50}, "ControllerVariables" :> {}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> Show[
+        Plot[
+         $CellContext`q[$CellContext`g0$$, $CellContext`g1$$, $CellContext`\
+\[Theta]$$, $CellContext`T], {$CellContext`T, 0, $CellContext`Tmax$$}, 
+         PlotRange -> {{0, $CellContext`Tmax$$}, {0, $CellContext`qmax$$}}, 
+         AxesLabel -> {
+          "\!\(\*StyleBox[\"T\",FontSlant->\"Italic\"]\) / K", 
+           "\!\(\*StyleBox[\"q\",FontSlant->\"Italic\"]\)"}, 
+         PlotStyle -> {{Black, 
+            AbsoluteThickness[1]}}, PlotLabel -> 
+         "Temperature dependence of the partition function for a two-level \
+system"], 
+        Graphics[{Red, 
+          
+          Line[{{$CellContext`\[Theta]$$, 
+             0}, {$CellContext`\[Theta]$$, $CellContext`qmax$$}}]}]], 
+      "Specifications" :> {{{$CellContext`g0$$, 1, 
+          "\!\(\*SubscriptBox[StyleBox[\"g\",FontSlant->\"Italic\"], \
+\"0\"]\)"}, 1, 4, 
+         1}, {{$CellContext`g1$$, 1, 
+          "\!\(\*SubscriptBox[StyleBox[\"g\",FontSlant->\"Italic\"], \
+\"1\"]\)"}, 1, 4, 
+         1}, {{$CellContext`\[Theta]$$, 50, 
+          "\!\(\*StyleBox[\"\[Theta]\",FontSlant->\"Italic\"]\) / K"}, 0, 
+         100}, {{$CellContext`Tmax$$, 1000, 
+          "\!\(\*SubscriptBox[StyleBox[\"T\",FontSlant->\"Italic\"], \"max\"]\
+\) / K"}, 0, 
+         3000}, {{$CellContext`qmax$$, 2, 
+          "\!\(\*SubscriptBox[StyleBox[\"q\",FontSlant->\"Italic\"], \"max\"]\
+\)"}, 0, 8}}, "Options" :> {}, "DefaultOptions" :> {}],
+     ImageSizeCache->{296., {199.93650390625, 204.06349609375}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellChangeTimes->{
+  3.855238512630916*^9, {3.855238601977599*^9, 3.855238609099934*^9}, 
+   3.8552386672852764`*^9, {3.855238799054182*^9, 3.855238811173052*^9}, {
+   3.8552392207046328`*^9, 3.8552392249724503`*^9}, {3.8552456704429984`*^9, 
+   3.8552456811254644`*^9}, 3.855256652725891*^9, 3.8552569882270327`*^9, {
+   3.855259857248263*^9, 3.855259868987707*^9}},
+ CellLabel->"Out[25]=",ExpressionUUID->"04faba4e-e31a-4617-965c-cc7421a3a243"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Manipulate", "[", 
+  RowBox[{
+   RowBox[{"Show", "[", 
+    RowBox[{
+     RowBox[{"Plot", "[", 
+      RowBox[{
+       RowBox[{"U", "[", 
+        RowBox[{"g0", ",", "g1", ",", "\[Theta]", ",", "T"}], "]"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"T", ",", "0", ",", "Tmax"}], "}"}], ",", 
+       RowBox[{"PlotRange", "\[Rule]", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"{", 
+           RowBox[{"0", ",", "Tmax"}], "}"}], ",", 
+          RowBox[{"{", 
+           RowBox[{"0", ",", "Umax"}], "}"}]}], "}"}]}], ",", 
+       RowBox[{"AxesLabel", "\[Rule]", 
+        RowBox[{"{", 
+         RowBox[{
+         "\"\<\!\(\*StyleBox[\"T\",FontSlant->\"Italic\"]\) / K\>\"", ",", 
+          "\"\<\!\(\*StyleBox[\"U\",FontSlant->\"Italic\"]\) / J \
+\!\(\*SuperscriptBox[\(mol\), \(-1\)]\)\>\""}], "}"}]}], ",", 
+       RowBox[{"PlotStyle", "\[Rule]", 
+        RowBox[{"{", 
+         RowBox[{"{", 
+          RowBox[{"Black", ",", 
+           RowBox[{"AbsoluteThickness", "[", "1", "]"}]}], "}"}], "}"}]}], 
+       ",", 
+       RowBox[{
+       "PlotLabel", "\[Rule]", 
+        "\"\<Temperature dependence of the internal energy for a two-level \
+system\>\""}]}], "]"}], ",", 
+     RowBox[{"Graphics", "[", 
+      RowBox[{"{", 
+       RowBox[{"Red", ",", 
+        RowBox[{"Line", "[", 
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{"\[Theta]", ",", "0"}], "}"}], ",", 
+           RowBox[{"{", 
+            RowBox[{"\[Theta]", ",", "Umax"}], "}"}]}], "}"}], "]"}]}], "}"}],
+       "]"}]}], "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+      "g0", ",", "1", ",", 
+       "\"\<\!\(\*SubscriptBox[StyleBox[\"g\",FontSlant->\"Italic\"], \
+\"0\"]\)\>\""}], "}"}], ",", "1", ",", "4", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+      "g1", ",", "1", ",", 
+       "\"\<\!\(\*SubscriptBox[StyleBox[\"g\",FontSlant->\"Italic\"], \
+\"1\"]\)\>\""}], "}"}], ",", "1", ",", "4", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+      "\[Theta]", ",", "50", ",", 
+       "\"\<\!\(\*StyleBox[\"\[Theta]\",FontSlant->\"Italic\"]\) / K\>\""}], 
+      "}"}], ",", "0", ",", "100"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+      "Tmax", ",", "1000", ",", 
+       "\"\<\!\(\*SubscriptBox[StyleBox[\"T\",FontSlant->\"Italic\"], \
+\"max\"]\) / K\>\""}], "}"}], ",", "0", ",", "2000"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+      "Umax", ",", "300", ",", 
+       "\"\<\!\(\*StyleBox[SubscriptBox[StyleBox[\"U\",FontSlant->\"Italic\"],\
+ StyleBox[\"max\",FontSlant->\"Plain\"]],FontSlant->\"Italic\"]\) / J \
+\!\(\*SuperscriptBox[\(mol\), \(-1\)]\)\>\""}], "}"}], ",", "0", ",", "700"}],
+     "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.8552457307203364`*^9, 3.8552457315416307`*^9}, {
+  3.8552459392005463`*^9, 3.855246009292132*^9}, {3.8552460579468837`*^9, 
+  3.855246085982872*^9}, {3.8552461464474325`*^9, 3.855246186174429*^9}, {
+  3.855246296674515*^9, 3.8552463835543795`*^9}, {3.855246606980564*^9, 
+  3.8552466142949777`*^9}},
+ CellLabel->"In[26]:=",ExpressionUUID->"e560330a-3b1d-4bb7-bab0-52225c873ee0"],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`g0$$ = 1, $CellContext`g1$$ = 
+    1, $CellContext`Tmax$$ = 1000, $CellContext`Umax$$ = 
+    299.99999999999994`, $CellContext`\[Theta]$$ = 50, Typeset`show$$ = True, 
+    Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
+    Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
+    "\"untitled\"", Typeset`specs$$ = {{{
+       Hold[$CellContext`g0$$], 1, 
+       "\!\(\*SubscriptBox[StyleBox[\"g\",FontSlant->\"Italic\"], \"0\"]\)"}, 
+      1, 4, 1}, {{
+       Hold[$CellContext`g1$$], 1, 
+       "\!\(\*SubscriptBox[StyleBox[\"g\",FontSlant->\"Italic\"], \"1\"]\)"}, 
+      1, 4, 1}, {{
+       Hold[$CellContext`\[Theta]$$], 50, 
+       "\!\(\*StyleBox[\"\[Theta]\",FontSlant->\"Italic\"]\) / K"}, 0, 100}, {{
+       Hold[$CellContext`Tmax$$], 1000, 
+       "\!\(\*SubscriptBox[StyleBox[\"T\",FontSlant->\"Italic\"], \"max\"]\) \
+/ K"}, 0, 2000}, {{
+       Hold[$CellContext`Umax$$], 300, 
+       "\!\(\*StyleBox[SubscriptBox[StyleBox[\"U\",FontSlant->\"Italic\"], \
+StyleBox[\"max\",FontSlant->\"Plain\"]],FontSlant->\"Italic\"]\) / J \
+\!\(\*SuperscriptBox[\(mol\), \(-1\)]\)"}, 0, 700}}, Typeset`size$$ = {
+    259.2, {84., 87.31244394749044}}, Typeset`update$$ = 0, 
+    Typeset`initDone$$, Typeset`skipInitDone$$ = True}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, 
+      "Variables" :> {$CellContext`g0$$ = 1, $CellContext`g1$$ = 
+        1, $CellContext`Tmax$$ = 1000, $CellContext`Umax$$ = 
+        300, $CellContext`\[Theta]$$ = 50}, "ControllerVariables" :> {}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> Show[
+        Plot[
+         $CellContext`U[$CellContext`g0$$, $CellContext`g1$$, $CellContext`\
+\[Theta]$$, $CellContext`T], {$CellContext`T, 0, $CellContext`Tmax$$}, 
+         PlotRange -> {{0, $CellContext`Tmax$$}, {0, $CellContext`Umax$$}}, 
+         AxesLabel -> {
+          "\!\(\*StyleBox[\"T\",FontSlant->\"Italic\"]\) / K", 
+           "\!\(\*StyleBox[\"U\",FontSlant->\"Italic\"]\) / J \
+\!\(\*SuperscriptBox[\(mol\), \(-1\)]\)"}, PlotStyle -> {{Black, 
+            AbsoluteThickness[1]}}, PlotLabel -> 
+         "Temperature dependence of the internal energy for a two-level \
+system"], 
+        Graphics[{Red, 
+          
+          Line[{{$CellContext`\[Theta]$$, 
+             0}, {$CellContext`\[Theta]$$, $CellContext`Umax$$}}]}]], 
+      "Specifications" :> {{{$CellContext`g0$$, 1, 
+          "\!\(\*SubscriptBox[StyleBox[\"g\",FontSlant->\"Italic\"], \
+\"0\"]\)"}, 1, 4, 
+         1}, {{$CellContext`g1$$, 1, 
+          "\!\(\*SubscriptBox[StyleBox[\"g\",FontSlant->\"Italic\"], \
+\"1\"]\)"}, 1, 4, 
+         1}, {{$CellContext`\[Theta]$$, 50, 
+          "\!\(\*StyleBox[\"\[Theta]\",FontSlant->\"Italic\"]\) / K"}, 0, 
+         100}, {{$CellContext`Tmax$$, 1000, 
+          "\!\(\*SubscriptBox[StyleBox[\"T\",FontSlant->\"Italic\"], \"max\"]\
+\) / K"}, 0, 
+         2000}, {{$CellContext`Umax$$, 300, 
+          "\!\(\*StyleBox[SubscriptBox[StyleBox[\"U\",FontSlant->\"Italic\"], \
+StyleBox[\"max\",FontSlant->\"Plain\"]],FontSlant->\"Italic\"]\) / J \
+\!\(\*SuperscriptBox[\(mol\), \(-1\)]\)"}, 0, 700}}, "Options" :> {}, 
+      "DefaultOptions" :> {}],
+     ImageSizeCache->{296., {198.93650390625, 203.06349609375}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellChangeTimes->{{3.855246191390211*^9, 3.8552462139225407`*^9}, {
+   3.8552463675651503`*^9, 3.855246385344635*^9}, {3.8552464391141567`*^9, 
+   3.85524644247825*^9}, 3.8552567357371564`*^9, {3.8552598575035434`*^9, 
+   3.8552598763863583`*^9}},
+ CellLabel->"Out[26]=",ExpressionUUID->"8a807f5e-6468-41d7-a529-9442afe49280"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Manipulate", "[", 
+  RowBox[{
+   RowBox[{"Show", "[", 
+    RowBox[{
+     RowBox[{"Plot", "[", 
+      RowBox[{
+       RowBox[{"Cv", "[", 
+        RowBox[{"g0", ",", "g1", ",", "\[Theta]", ",", "T"}], "]"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"T", ",", "0", ",", "Tmax"}], "}"}], ",", 
+       RowBox[{"PlotRange", "\[Rule]", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"{", 
+           RowBox[{"0", ",", "Tmax"}], "}"}], ",", 
+          RowBox[{"{", 
+           RowBox[{"0", ",", "Cvmax"}], "}"}]}], "}"}]}], ",", 
+       RowBox[{"AxesLabel", "\[Rule]", 
+        RowBox[{"{", 
+         RowBox[{
+         "\"\<\!\(\*StyleBox[\"T\",FontSlant->\"Italic\"]\) / K\>\"", ",", 
+          "\"\<\!\(\*StyleBox[SubscriptBox[StyleBox[\"C\",FontSlant->\"Italic\
+\"], \"V\"],FontSlant->\"Italic\"]\) / J \!\(\*SuperscriptBox[\(K\), \
+\(-1\)]\) \!\(\*SuperscriptBox[\(mol\), \(-1\)]\)\>\""}], "}"}]}], ",", 
+       RowBox[{"PlotStyle", "\[Rule]", 
+        RowBox[{"{", 
+         RowBox[{"{", 
+          RowBox[{"Black", ",", 
+           RowBox[{"AbsoluteThickness", "[", "1", "]"}]}], "}"}], "}"}]}], 
+       ",", 
+       RowBox[{
+       "PlotLabel", "\[Rule]", 
+        "\"\<Temperature dependence of the heat capacity for a two-level \
+system\>\""}]}], "]"}], ",", 
+     RowBox[{"Graphics", "[", 
+      RowBox[{"{", 
+       RowBox[{"Red", ",", 
+        RowBox[{"Line", "[", 
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{"\[Theta]", ",", "0"}], "}"}], ",", 
+           RowBox[{"{", 
+            RowBox[{"\[Theta]", ",", "Cvmax"}], "}"}]}], "}"}], "]"}]}], 
+       "}"}], "]"}]}], "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+      "g0", ",", "1", ",", 
+       "\"\<\!\(\*SubscriptBox[StyleBox[\"g\",FontSlant->\"Italic\"], \
+\"0\"]\)\>\""}], "}"}], ",", "1", ",", "4", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+      "g1", ",", "1", ",", 
+       "\"\<\!\(\*SubscriptBox[StyleBox[\"g\",FontSlant->\"Italic\"], \
+\"1\"]\)\>\""}], "}"}], ",", "1", ",", "4", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+      "\[Theta]", ",", "50", ",", 
+       "\"\<\!\(\*StyleBox[\"\[Theta]\",FontSlant->\"Italic\"]\) / K\>\""}], 
+      "}"}], ",", "0", ",", "100"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+      "Tmax", ",", "600", ",", 
+       "\"\<\!\(\*SubscriptBox[StyleBox[\"T\",FontSlant->\"Italic\"], \
+\"max\"]\) / K\>\""}], "}"}], ",", "0", ",", "1000"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+      "Cvmax", ",", "5", ",", 
+       "\"\<\!\(\*StyleBox[SubscriptBox[StyleBox[\"C\",FontSlant->\"Italic\"],\
+ RowBox[{\"V\", \" \", \"max\"}]],FontSlant->\"Italic\"]\) / J \
+\!\(\*SuperscriptBox[\(K\), \(-1\)]\) \!\(\*SuperscriptBox[\(mol\), \(-1\)]\)\
+\>\""}], "}"}], ",", "0", ",", "15"}], "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.8552464998556633`*^9, 3.855246570337431*^9}, {
+  3.855246668629675*^9, 3.855246726474579*^9}, {3.855246759414283*^9, 
+  3.8552468065777025`*^9}, {3.8552468628737497`*^9, 3.8552468767837396`*^9}, {
+  3.8552469332505555`*^9, 3.855246977004425*^9}},
+ CellLabel->"In[27]:=",ExpressionUUID->"f50d85dd-5597-4e83-9f58-5b9fd46a6c9b"],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`Cvmax$$ = 
+    5.0000000000000036`, $CellContext`g0$$ = 1, $CellContext`g1$$ = 
+    1, $CellContext`Tmax$$ = 600, $CellContext`\[Theta]$$ = 50, 
+    Typeset`show$$ = True, Typeset`bookmarkList$$ = {}, 
+    Typeset`bookmarkMode$$ = "Menu", Typeset`animator$$, Typeset`animvar$$ = 
+    1, Typeset`name$$ = "\"untitled\"", Typeset`specs$$ = {{{
+       Hold[$CellContext`g0$$], 1, 
+       "\!\(\*SubscriptBox[StyleBox[\"g\",FontSlant->\"Italic\"], \"0\"]\)"}, 
+      1, 4, 1}, {{
+       Hold[$CellContext`g1$$], 1, 
+       "\!\(\*SubscriptBox[StyleBox[\"g\",FontSlant->\"Italic\"], \"1\"]\)"}, 
+      1, 4, 1}, {{
+       Hold[$CellContext`\[Theta]$$], 50, 
+       "\!\(\*StyleBox[\"\[Theta]\",FontSlant->\"Italic\"]\) / K"}, 0, 100}, {{
+       Hold[$CellContext`Tmax$$], 600, 
+       "\!\(\*SubscriptBox[StyleBox[\"T\",FontSlant->\"Italic\"], \"max\"]\) \
+/ K"}, 0, 1000}, {{
+       Hold[$CellContext`Cvmax$$], 5, 
+       "\!\(\*StyleBox[SubscriptBox[StyleBox[\"C\",FontSlant->\"Italic\"], \
+RowBox[{\"V\", \" \", \"max\"}]],FontSlant->\"Italic\"]\) / J \
+\!\(\*SuperscriptBox[\(K\), \(-1\)]\) \!\(\*SuperscriptBox[\(mol\), \
+\(-1\)]\)"}, 0, 15}}, Typeset`size$$ = {259.2, {82., 84.46762009646937}}, 
+    Typeset`update$$ = 0, Typeset`initDone$$, Typeset`skipInitDone$$ = True}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, 
+      "Variables" :> {$CellContext`Cvmax$$ = 5, $CellContext`g0$$ = 
+        1, $CellContext`g1$$ = 1, $CellContext`Tmax$$ = 
+        600, $CellContext`\[Theta]$$ = 50}, "ControllerVariables" :> {}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> Show[
+        Plot[
+         $CellContext`Cv[$CellContext`g0$$, $CellContext`g1$$, $CellContext`\
+\[Theta]$$, $CellContext`T], {$CellContext`T, 0, $CellContext`Tmax$$}, 
+         PlotRange -> {{0, $CellContext`Tmax$$}, {0, $CellContext`Cvmax$$}}, 
+         AxesLabel -> {
+          "\!\(\*StyleBox[\"T\",FontSlant->\"Italic\"]\) / K", 
+           "\!\(\*StyleBox[SubscriptBox[StyleBox[\"C\",FontSlant->\"Italic\"],\
+ \"V\"],FontSlant->\"Italic\"]\) / J \!\(\*SuperscriptBox[\(K\), \(-1\)]\) \!\
+\(\*SuperscriptBox[\(mol\), \(-1\)]\)"}, PlotStyle -> {{Black, 
+            AbsoluteThickness[1]}}, PlotLabel -> 
+         "Temperature dependence of the heat capacity for a two-level \
+system"], 
+        Graphics[{Red, 
+          
+          Line[{{$CellContext`\[Theta]$$, 
+             0}, {$CellContext`\[Theta]$$, $CellContext`Cvmax$$}}]}]], 
+      "Specifications" :> {{{$CellContext`g0$$, 1, 
+          "\!\(\*SubscriptBox[StyleBox[\"g\",FontSlant->\"Italic\"], \
+\"0\"]\)"}, 1, 4, 
+         1}, {{$CellContext`g1$$, 1, 
+          "\!\(\*SubscriptBox[StyleBox[\"g\",FontSlant->\"Italic\"], \
+\"1\"]\)"}, 1, 4, 
+         1}, {{$CellContext`\[Theta]$$, 50, 
+          "\!\(\*StyleBox[\"\[Theta]\",FontSlant->\"Italic\"]\) / K"}, 0, 
+         100}, {{$CellContext`Tmax$$, 600, 
+          "\!\(\*SubscriptBox[StyleBox[\"T\",FontSlant->\"Italic\"], \"max\"]\
+\) / K"}, 0, 
+         1000}, {{$CellContext`Cvmax$$, 5, 
+          "\!\(\*StyleBox[SubscriptBox[StyleBox[\"C\",FontSlant->\"Italic\"], \
+RowBox[{\"V\", \" \", \"max\"}]],FontSlant->\"Italic\"]\) / J \
+\!\(\*SuperscriptBox[\(K\), \(-1\)]\) \!\(\*SuperscriptBox[\(mol\), \
+\(-1\)]\)"}, 0, 15}}, "Options" :> {}, "DefaultOptions" :> {}],
+     ImageSizeCache->{296., {196.93650390625, 201.06349609375}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellChangeTimes->{
+  3.8552468837014947`*^9, 3.8552469462178197`*^9, {3.855246985605982*^9, 
+   3.855246990921035*^9}, 3.8552567749261446`*^9, {3.8552598577309084`*^9, 
+   3.8552598866659203`*^9}},
+ CellLabel->"Out[27]=",ExpressionUUID->"49896ee7-306c-4465-b40f-56880cd1d100"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Multi-level system", "Subsection",
+ CellChangeTimes->{{3.855247104123954*^9, 
+  3.8552471144086323`*^9}},ExpressionUUID->"1f2296a3-6624-41e0-b295-\
+5715ef6464d1"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"q", "'"}], "[", 
+   RowBox[{"\[Theta]_", ",", "T_"}], "]"}], "=", 
+  FractionBox["1", 
+   RowBox[{"1", "-", 
+    RowBox[{"Exp", "[", 
+     FractionBox[
+      RowBox[{"-", "\[Theta]"}], "T"], "]"}]}]]}]], "Input",
+ CellChangeTimes->{{3.855247152169199*^9, 3.85524715312301*^9}, {
+   3.8552471952712994`*^9, 3.855247204499979*^9}, {3.855247268557393*^9, 
+   3.855247315173396*^9}, 3.8552491077666807`*^9},
+ CellLabel->"In[28]:=",ExpressionUUID->"b141f951-3fc2-4d33-84db-c754377df83e"],
+
+Cell[BoxData[
+ FractionBox["1", 
+  RowBox[{"1", "-", 
+   SuperscriptBox["\[ExponentialE]", 
+    RowBox[{"-", 
+     FractionBox["\[Theta]", "T"]}]]}]]], "Output",
+ CellChangeTimes->{3.855247325369053*^9, 3.855249138975224*^9, 
+  3.855256780406813*^9, 3.855259890569292*^9},
+ CellLabel->"Out[28]=",ExpressionUUID->"427fe6d1-5fa8-44fc-8462-9ba88fc84471"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"U", "'"}], "[", 
+   RowBox[{"\[Theta]_", ",", "T_"}], "]"}], "=", 
+  RowBox[{"8.3145", " ", 
+   FractionBox[
+    RowBox[{
+     SuperscriptBox["T", "2"], " "}], 
+    RowBox[{
+     RowBox[{"q", "'"}], "[", 
+     RowBox[{"\[Theta]", ",", "T"}], "]"}]], " ", 
+   RowBox[{"D", "[", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"q", "'"}], "[", 
+      RowBox[{"\[Theta]", ",", "T"}], "]"}], ",", "T"}], "]"}]}]}]], "Input",
+ CellChangeTimes->{{3.855247378337968*^9, 3.8552474099443245`*^9}, {
+   3.855247441087449*^9, 3.8552474473380632`*^9}, 3.855249111291224*^9, {
+   3.8552568402439775`*^9, 3.8552568673280015`*^9}},
+ CellLabel->"In[29]:=",ExpressionUUID->"7072c7b5-89e5-47a9-8614-2125a0c868bc"],
+
+Cell[BoxData[
+ FractionBox[
+  RowBox[{"8.3145`", " ", 
+   SuperscriptBox["\[ExponentialE]", 
+    RowBox[{"-", 
+     FractionBox["\[Theta]", "T"]}]], " ", "\[Theta]"}], 
+  RowBox[{"1", "-", 
+   SuperscriptBox["\[ExponentialE]", 
+    RowBox[{"-", 
+     FractionBox["\[Theta]", "T"]}]]}]]], "Output",
+ CellChangeTimes->{
+  3.855247452056114*^9, 3.855249141098774*^9, 3.8552567824104605`*^9, {
+   3.855256843189705*^9, 3.855256869418373*^9}, 3.855259890634555*^9},
+ CellLabel->"Out[29]=",ExpressionUUID->"7abae798-8c83-4ea2-8198-f9977a5deef6"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"Cv", "'"}], "[", 
+   RowBox[{"\[Theta]_", ",", "T_"}], "]"}], "=", 
+  RowBox[{"D", "[", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"U", "'"}], "[", 
+     RowBox[{"\[Theta]", ",", "T"}], "]"}], ",", "T"}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.8552474678946915`*^9, 3.8552474984000745`*^9}, 
+   3.8552491169556637`*^9, 3.855256878789852*^9},
+ CellLabel->"In[30]:=",ExpressionUUID->"d20b8535-c955-4483-b701-fbdfa75d474f"],
+
+Cell[BoxData[
+ RowBox[{
+  FractionBox[
+   RowBox[{"8.3145`", " ", 
+    SuperscriptBox["\[ExponentialE]", 
+     RowBox[{"-", 
+      FractionBox[
+       RowBox[{"2", " ", "\[Theta]"}], "T"]}]], " ", 
+    SuperscriptBox["\[Theta]", "2"]}], 
+   RowBox[{
+    SuperscriptBox[
+     RowBox[{"(", 
+      RowBox[{"1", "-", 
+       SuperscriptBox["\[ExponentialE]", 
+        RowBox[{"-", 
+         FractionBox["\[Theta]", "T"]}]]}], ")"}], "2"], " ", 
+    SuperscriptBox["T", "2"]}]], "+", 
+  FractionBox[
+   RowBox[{"8.3145`", " ", 
+    SuperscriptBox["\[ExponentialE]", 
+     RowBox[{"-", 
+      FractionBox["\[Theta]", "T"]}]], " ", 
+    SuperscriptBox["\[Theta]", "2"]}], 
+   RowBox[{
+    RowBox[{"(", 
+     RowBox[{"1", "-", 
+      SuperscriptBox["\[ExponentialE]", 
+       RowBox[{"-", 
+        FractionBox["\[Theta]", "T"]}]]}], ")"}], " ", 
+    SuperscriptBox["T", "2"]}]]}]], "Output",
+ CellChangeTimes->{3.855247502284734*^9, 3.855249143451002*^9, 
+  3.855256784319098*^9, 3.855256880156907*^9, 3.855259890696138*^9},
+ CellLabel->"Out[30]=",ExpressionUUID->"af071965-533b-4c34-ab94-243898264cf6"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"qlim", "[", 
+   RowBox[{"\[Theta]_", ",", "T_"}], "]"}], "=", 
+  RowBox[{"T", "/", "\[Theta]"}]}]], "Input",
+ CellChangeTimes->{{3.855247679100335*^9, 3.855247708420831*^9}},
+ CellLabel->"In[31]:=",ExpressionUUID->"1cb7eec2-2566-4fa6-818b-178dd0a8d7c6"],
+
+Cell[BoxData[
+ FractionBox["T", "\[Theta]"]], "Output",
+ CellChangeTimes->{3.855247709587977*^9, 3.855249145634034*^9, 
+  3.855256786757681*^9, 3.855259890757955*^9},
+ CellLabel->"Out[31]=",ExpressionUUID->"69194012-0de2-411d-b82c-c1db8c641eb7"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Ulim", "[", 
+   RowBox[{"\[Theta]_", ",", "T_"}], "]"}], "=", 
+  RowBox[{"8.3145", " ", "T"}]}]], "Input",
+ CellChangeTimes->{{3.8552477136693525`*^9, 3.855247737571888*^9}, {
+  3.855247776795419*^9, 3.8552477787979736`*^9}},
+ CellLabel->"In[32]:=",ExpressionUUID->"b4918d8f-6571-4735-a99b-5c9a2ae4c881"],
+
+Cell[BoxData[
+ RowBox[{"8.3145`", " ", "T"}]], "Output",
+ CellChangeTimes->{3.855247779724002*^9, 3.855249147555842*^9, 
+  3.8552567907274246`*^9, 3.855259890812666*^9},
+ CellLabel->"Out[32]=",ExpressionUUID->"28ce25e4-986c-4415-af31-47074e630f23"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Cvlim", "[", 
+   RowBox[{"\[Theta]_", ",", "T_"}], "]"}], "=", "8.3145"}]], "Input",
+ CellChangeTimes->{{3.855247791328082*^9, 3.8552478086497984`*^9}},
+ CellLabel->"In[33]:=",ExpressionUUID->"468436f5-339d-4283-a312-3a767952870b"],
+
+Cell[BoxData["8.3145`"], "Output",
+ CellChangeTimes->{3.8552478098649073`*^9, 3.855249149710436*^9, 
+  3.855256792337635*^9, 3.8552598908719745`*^9},
+ CellLabel->"Out[33]=",ExpressionUUID->"84ef1302-78e8-4747-94b7-156920111113"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Manipulate", "[", 
+  RowBox[{
+   RowBox[{"Show", "[", 
+    RowBox[{
+     RowBox[{"Plot", "[", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"q", "'"}], "[", 
+          RowBox[{"\[Theta]", ",", "T"}], "]"}], ",", 
+         RowBox[{"qlim", "[", 
+          RowBox[{"\[Theta]", ",", "T"}], "]"}]}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"T", ",", "0", ",", "Tmax"}], "}"}], ",", 
+       RowBox[{"PlotRange", "\[Rule]", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"{", 
+           RowBox[{"0", ",", "Tmax"}], "}"}], ",", 
+          RowBox[{"{", 
+           RowBox[{"0", ",", "qmax"}], "}"}]}], "}"}]}], ",", 
+       RowBox[{"AxesLabel", "\[Rule]", 
+        RowBox[{"{", 
+         RowBox[{
+         "\"\<\!\(\*StyleBox[\"T\",FontSlant->\"Italic\"]\) / K\>\"", ",", 
+          "\"\<\!\(\*StyleBox[\"q\",FontSlant->\"Italic\"]\)\>\""}], "}"}]}], 
+       ",", 
+       RowBox[{"PlotStyle", "\[Rule]", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"{", 
+           RowBox[{"Black", ",", 
+            RowBox[{"AbsoluteThickness", "[", "1", "]"}]}], "}"}], ",", 
+          RowBox[{"{", 
+           RowBox[{"Blue", ",", 
+            RowBox[{"AbsoluteThickness", "[", "1", "]"}], ",", 
+            RowBox[{"AbsoluteDashing", "[", "2", "]"}]}], "}"}]}], "}"}]}], 
+       ",", 
+       RowBox[{
+       "PlotLabel", "\[Rule]", 
+        "\"\<Temperature dependence of the partition function for a \
+multi-level system\>\""}], ",", 
+       RowBox[{"PlotLegends", "\[Rule]", 
+        RowBox[{"{", 
+         RowBox[{
+         "\"\<\!\(\*StyleBox[\"q\",FontSlant->\"Italic\"]\)\>\"", ",", 
+          "\"\<\!\(\*SubscriptBox[StyleBox[\"q\",FontSlant->\"Italic\"], \
+\"limit\"]\)\>\""}], "}"}]}]}], "]"}], ",", 
+     RowBox[{"Graphics", "[", 
+      RowBox[{"{", 
+       RowBox[{"Red", ",", 
+        RowBox[{"Line", "[", 
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{"\[Theta]", ",", "0"}], "}"}], ",", 
+           RowBox[{"{", 
+            RowBox[{"\[Theta]", ",", "qmax"}], "}"}]}], "}"}], "]"}]}], "}"}],
+       "]"}]}], "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+      "\[Theta]", ",", "50", ",", 
+       "\"\<\!\(\*StyleBox[\"\[Theta]\",FontSlant->\"Italic\"]\) / K\>\""}], 
+      "}"}], ",", "0", ",", "100"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+      "Tmax", ",", "1000", ",", 
+       "\"\<\!\(\*SubscriptBox[StyleBox[\"T\",FontSlant->\"Italic\"], \
+\"max\"]\) / K\>\""}], "}"}], ",", "0", ",", "3000"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+      "qmax", ",", "30", ",", 
+       "\"\<\!\(\*SubscriptBox[StyleBox[\"q\",FontSlant->\"Italic\"], \
+\"max\"]\)\>\""}], "}"}], ",", "0", ",", "3000"}], "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.855250354354561*^9, 3.8552504597549815`*^9}, {
+  3.855250654431467*^9, 3.8552506811485147`*^9}, {3.855250773738602*^9, 
+  3.8552507960204477`*^9}, {3.8552509080629706`*^9, 3.85525097561497*^9}},
+ CellLabel->"In[34]:=",ExpressionUUID->"458760a2-4dd1-4810-be25-6bf1228577a5"],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`qmax$$ = 
+    29.99999999999989, $CellContext`Tmax$$ = 
+    1000.0000000000001`, $CellContext`\[Theta]$$ = 50, Typeset`show$$ = True, 
+    Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
+    Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
+    "\"untitled\"", Typeset`specs$$ = {{{
+       Hold[$CellContext`\[Theta]$$], 50, 
+       "\!\(\*StyleBox[\"\[Theta]\",FontSlant->\"Italic\"]\) / K"}, 0, 100}, {{
+       Hold[$CellContext`Tmax$$], 1000, 
+       "\!\(\*SubscriptBox[StyleBox[\"T\",FontSlant->\"Italic\"], \"max\"]\) \
+/ K"}, 0, 3000}, {{
+       Hold[$CellContext`qmax$$], 30, 
+       "\!\(\*SubscriptBox[StyleBox[\"q\",FontSlant->\"Italic\"], \
+\"max\"]\)"}, 0, 3000}}, Typeset`size$$ = {327., {84., 88.}}, 
+    Typeset`update$$ = 0, Typeset`initDone$$, Typeset`skipInitDone$$ = True}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, 
+      "Variables" :> {$CellContext`qmax$$ = 30, $CellContext`Tmax$$ = 
+        1000, $CellContext`\[Theta]$$ = 50}, "ControllerVariables" :> {}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> Show[
+        Plot[{
+          Derivative[
+          1][$CellContext`q][$CellContext`\[Theta]$$, $CellContext`T], 
+          $CellContext`qlim[$CellContext`\[Theta]$$, $CellContext`T]}, \
+{$CellContext`T, 0, $CellContext`Tmax$$}, 
+         PlotRange -> {{0, $CellContext`Tmax$$}, {0, $CellContext`qmax$$}}, 
+         AxesLabel -> {
+          "\!\(\*StyleBox[\"T\",FontSlant->\"Italic\"]\) / K", 
+           "\!\(\*StyleBox[\"q\",FontSlant->\"Italic\"]\)"}, 
+         PlotStyle -> {{Black, 
+            AbsoluteThickness[1]}, {Blue, 
+            AbsoluteThickness[1], 
+            AbsoluteDashing[2]}}, PlotLabel -> 
+         "Temperature dependence of the partition function for a multi-level \
+system", PlotLegends -> {
+          "\!\(\*StyleBox[\"q\",FontSlant->\"Italic\"]\)", 
+           "\!\(\*SubscriptBox[StyleBox[\"q\",FontSlant->\"Italic\"], \"limit\
+\"]\)"}], 
+        Graphics[{Red, 
+          
+          Line[{{$CellContext`\[Theta]$$, 
+             0}, {$CellContext`\[Theta]$$, $CellContext`qmax$$}}]}]], 
+      "Specifications" :> {{{$CellContext`\[Theta]$$, 50, 
+          "\!\(\*StyleBox[\"\[Theta]\",FontSlant->\"Italic\"]\) / K"}, 0, 
+         100}, {{$CellContext`Tmax$$, 1000, 
+          "\!\(\*SubscriptBox[StyleBox[\"T\",FontSlant->\"Italic\"], \"max\"]\
+\) / K"}, 0, 
+         3000}, {{$CellContext`qmax$$, 30, 
+          "\!\(\*SubscriptBox[StyleBox[\"q\",FontSlant->\"Italic\"], \"max\"]\
+\)"}, 0, 3000}}, "Options" :> {}, "DefaultOptions" :> {}],
+     ImageSizeCache->{363., {162.93650390625, 167.06349609375}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellChangeTimes->{
+  3.8552504698502007`*^9, 3.855250691255584*^9, 3.855250737887323*^9, 
+   3.855250814079033*^9, 3.855250861769596*^9, {3.8552509797514296`*^9, 
+   3.8552509922822914`*^9}, 3.855251905396976*^9, 3.8552567974377313`*^9, 
+   3.855256887277583*^9, 3.8552591194260144`*^9, {3.8552598909536824`*^9, 
+   3.8552598954432135`*^9}},
+ CellLabel->"Out[34]=",ExpressionUUID->"7fbfd320-6bdb-44d6-b3f6-adc2cf1597a1"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Manipulate", "[", 
+  RowBox[{
+   RowBox[{"Show", "[", 
+    RowBox[{
+     RowBox[{"Plot", "[", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"U", "'"}], "[", 
+          RowBox[{"\[Theta]", ",", "T"}], "]"}], ",", 
+         RowBox[{"Ulim", "[", 
+          RowBox[{"\[Theta]", ",", "T"}], "]"}]}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"T", ",", "0", ",", "Tmax"}], "}"}], ",", 
+       RowBox[{"PlotRange", "\[Rule]", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"{", 
+           RowBox[{"0", ",", "Tmax"}], "}"}], ",", 
+          RowBox[{"{", 
+           RowBox[{"0", ",", "Umax"}], "}"}]}], "}"}]}], ",", 
+       RowBox[{"AxesLabel", "\[Rule]", 
+        RowBox[{"{", 
+         RowBox[{
+         "\"\<\!\(\*StyleBox[\"T\",FontSlant->\"Italic\"]\) / K\>\"", ",", 
+          "\"\<\!\(\*StyleBox[\"U\",FontSlant->\"Italic\"]\) / J \
+\!\(\*SuperscriptBox[\(mol\), \(-1\)]\)\>\""}], "}"}]}], ",", 
+       RowBox[{"PlotStyle", "\[Rule]", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"{", 
+           RowBox[{"Black", ",", 
+            RowBox[{"AbsoluteThickness", "[", "1", "]"}]}], "}"}], ",", 
+          RowBox[{"{", 
+           RowBox[{"Blue", ",", 
+            RowBox[{"AbsoluteThickness", "[", "1", "]"}], ",", 
+            RowBox[{"AbsoluteDashing", "[", "2", "]"}]}], "}"}]}], "}"}]}], 
+       ",", 
+       RowBox[{
+       "PlotLabel", "\[Rule]", 
+        "\"\<Temperature dependence of the internal energy for a multi-level \
+system\>\""}], ",", 
+       RowBox[{"PlotLegends", "\[Rule]", 
+        RowBox[{"{", 
+         RowBox[{
+         "\"\<\!\(\*StyleBox[\"U\",FontSlant->\"Italic\"]\)\>\"", ",", 
+          "\"\<\!\(\*SubscriptBox[StyleBox[\"U\",FontSlant->\"Italic\"], \
+\"limit\"]\)\>\""}], "}"}]}]}], "]"}], ",", 
+     RowBox[{"Graphics", "[", 
+      RowBox[{"{", 
+       RowBox[{"Red", ",", 
+        RowBox[{"Line", "[", 
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{"\[Theta]", ",", "0"}], "}"}], ",", 
+           RowBox[{"{", 
+            RowBox[{"\[Theta]", ",", "Umax"}], "}"}]}], "}"}], "]"}]}], "}"}],
+       "]"}]}], "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+      "\[Theta]", ",", "50", ",", 
+       "\"\<\!\(\*StyleBox[\"\[Theta]\",FontSlant->\"Italic\"]\) / K\>\""}], 
+      "}"}], ",", "0", ",", "100"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+      "Tmax", ",", "1000", ",", 
+       "\"\<\!\(\*SubscriptBox[StyleBox[\"T\",FontSlant->\"Italic\"], \
+\"max\"]\) / K\>\""}], "}"}], ",", "0", ",", "2000"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+      "Umax", ",", "9000", ",", 
+       "\"\<\!\(\*SubscriptBox[StyleBox[\"U\",FontSlant->\"Italic\"], \
+\"max\"]\) / J \!\(\*SuperscriptBox[\(mol\), \(-1\)]\)\>\""}], "}"}], ",", 
+     "0", ",", "18000"}], "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.8552510612744427`*^9, 3.855251172075715*^9}, {
+  3.8552512662944164`*^9, 3.855251320136265*^9}, {3.8552515378258686`*^9, 
+  3.855251542892844*^9}, {3.855251700068083*^9, 3.8552517004256554`*^9}, {
+  3.8552519556106396`*^9, 3.855251957536893*^9}, {3.85525239907902*^9, 
+  3.855252403099132*^9}},
+ CellLabel->"In[35]:=",ExpressionUUID->"72177fd0-7a0b-40be-a132-a6e94401cf5b"],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`Tmax$$ = 1000, $CellContext`Umax$$ = 
+    9000, $CellContext`\[Theta]$$ = 50, Typeset`show$$ = True, 
+    Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
+    Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
+    "\"untitled\"", Typeset`specs$$ = {{{
+       Hold[$CellContext`\[Theta]$$], 50, 
+       "\!\(\*StyleBox[\"\[Theta]\",FontSlant->\"Italic\"]\) / K"}, 0, 100}, {{
+       Hold[$CellContext`Tmax$$], 1000, 
+       "\!\(\*SubscriptBox[StyleBox[\"T\",FontSlant->\"Italic\"], \"max\"]\) \
+/ K"}, 0, 2000}, {{
+       Hold[$CellContext`Umax$$], 9000, 
+       "\!\(\*SubscriptBox[StyleBox[\"U\",FontSlant->\"Italic\"], \"max\"]\) \
+/ J \!\(\*SuperscriptBox[\(mol\), \(-1\)]\)"}, 0, 18000}}, Typeset`size$$ = {
+    565., {147., 154.}}, Typeset`update$$ = 0, Typeset`initDone$$, 
+    Typeset`skipInitDone$$ = True}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, 
+      "Variables" :> {$CellContext`Tmax$$ = 1000, $CellContext`Umax$$ = 
+        9000, $CellContext`\[Theta]$$ = 50}, "ControllerVariables" :> {}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> Show[
+        Plot[{
+          Derivative[
+          1][$CellContext`U][$CellContext`\[Theta]$$, $CellContext`T], 
+          $CellContext`Ulim[$CellContext`\[Theta]$$, $CellContext`T]}, \
+{$CellContext`T, 0, $CellContext`Tmax$$}, 
+         PlotRange -> {{0, $CellContext`Tmax$$}, {0, $CellContext`Umax$$}}, 
+         AxesLabel -> {
+          "\!\(\*StyleBox[\"T\",FontSlant->\"Italic\"]\) / K", 
+           "\!\(\*StyleBox[\"U\",FontSlant->\"Italic\"]\) / J \
+\!\(\*SuperscriptBox[\(mol\), \(-1\)]\)"}, PlotStyle -> {{Black, 
+            AbsoluteThickness[1]}, {Blue, 
+            AbsoluteThickness[1], 
+            AbsoluteDashing[2]}}, PlotLabel -> 
+         "Temperature dependence of the internal energy for a multi-level \
+system", PlotLegends -> {
+          "\!\(\*StyleBox[\"U\",FontSlant->\"Italic\"]\)", 
+           "\!\(\*SubscriptBox[StyleBox[\"U\",FontSlant->\"Italic\"], \"limit\
+\"]\)"}], 
+        Graphics[{Red, 
+          
+          Line[{{$CellContext`\[Theta]$$, 
+             0}, {$CellContext`\[Theta]$$, $CellContext`Umax$$}}]}]], 
+      "Specifications" :> {{{$CellContext`\[Theta]$$, 50, 
+          "\!\(\*StyleBox[\"\[Theta]\",FontSlant->\"Italic\"]\) / K"}, 0, 
+         100}, {{$CellContext`Tmax$$, 1000, 
+          "\!\(\*SubscriptBox[StyleBox[\"T\",FontSlant->\"Italic\"], \"max\"]\
+\) / K"}, 0, 
+         2000}, {{$CellContext`Umax$$, 9000, 
+          "\!\(\*SubscriptBox[StyleBox[\"U\",FontSlant->\"Italic\"], \"max\"]\
+\) / J \!\(\*SuperscriptBox[\(mol\), \(-1\)]\)"}, 0, 18000}}, "Options" :> {},
+       "DefaultOptions" :> {}],
+     ImageSizeCache->{628., {285., 293.}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellChangeTimes->{
+  3.855251406700488*^9, 3.8552514961436524`*^9, 3.8552515467218633`*^9, 
+   3.8552517542126217`*^9, {3.8552519234625473`*^9, 3.855251958540411*^9}, 
+   3.8552520091581807`*^9, {3.855252041356032*^9, 3.8552520431718874`*^9}, {
+   3.855256804080753*^9, 3.8552568138866386`*^9}, 3.855256890786681*^9, {
+   3.8552590884984007`*^9, 3.855259093749535*^9}, {3.8552598912248077`*^9, 
+   3.855259899951476*^9}},
+ CellLabel->"Out[35]=",ExpressionUUID->"f17984f0-33c7-4f6d-b8d1-a598c5a289aa"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Manipulate", "[", 
+  RowBox[{
+   RowBox[{"Show", "[", 
+    RowBox[{
+     RowBox[{"Plot", "[", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"Cv", "'"}], "[", 
+          RowBox[{"\[Theta]", ",", "T"}], "]"}], ",", 
+         RowBox[{"Cvlim", "[", 
+          RowBox[{"\[Theta]", ",", "T"}], "]"}]}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"T", ",", "0", ",", "Tmax"}], "}"}], ",", 
+       RowBox[{"PlotRange", "\[Rule]", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"{", 
+           RowBox[{"0", ",", "Tmax"}], "}"}], ",", 
+          RowBox[{"{", 
+           RowBox[{"0", ",", "Cvmax"}], "}"}]}], "}"}]}], ",", 
+       RowBox[{"AxesLabel", "\[Rule]", 
+        RowBox[{"{", 
+         RowBox[{
+         "\"\<\!\(\*StyleBox[\"T\",FontSlant->\"Italic\"]\) / K\>\"", ",", 
+          "\"\<\!\(\*StyleBox[SubscriptBox[StyleBox[\"C\",FontSlant->\"Italic\
+\"], \"V\"],FontSlant->\"Italic\"]\) / J \!\(\*SuperscriptBox[\(K\), \
+\(-1\)]\) \!\(\*SuperscriptBox[\(mol\), \(-1\)]\)\>\""}], "}"}]}], ",", 
+       RowBox[{"PlotStyle", "\[Rule]", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"{", 
+           RowBox[{"Black", ",", 
+            RowBox[{"AbsoluteThickness", "[", "1", "]"}]}], "}"}], ",", 
+          RowBox[{"{", 
+           RowBox[{"Blue", ",", 
+            RowBox[{"AbsoluteThickness", "[", "1", "]"}], ",", 
+            RowBox[{"AbsoluteDashing", "[", "2", "]"}]}], "}"}]}], "}"}]}], 
+       ",", 
+       RowBox[{
+       "PlotLabel", "\[Rule]", 
+        "\"\<Temperature dependence of the heat capacity for a multi-level \
+system\>\""}], ",", 
+       RowBox[{"PlotLegends", "\[Rule]", 
+        RowBox[{"{", 
+         RowBox[{
+         "\"\<\!\(\*StyleBox[SubscriptBox[StyleBox[\"C\",FontSlant->\"Italic\"\
+], \"V\"],FontSlant->\"Italic\"]\)\>\"", ",", 
+          "\"\<\!\(\*SubscriptBox[StyleBox[\"C\",FontSlant->\"Italic\"], \
+RowBox[{StyleBox[\"V\",FontSlant->\"Italic\"], \" \", \"limit\"}]]\)\>\""}], 
+         "}"}]}]}], "]"}], ",", 
+     RowBox[{"Graphics", "[", 
+      RowBox[{"{", 
+       RowBox[{"Red", ",", 
+        RowBox[{"Line", "[", 
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{"\[Theta]", ",", "0"}], "}"}], ",", 
+           RowBox[{"{", 
+            RowBox[{"\[Theta]", ",", "Cvmax"}], "}"}]}], "}"}], "]"}]}], 
+       "}"}], "]"}]}], "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+      "\[Theta]", ",", "50", ",", 
+       "\"\<\!\(\*StyleBox[\"\[Theta]\",FontSlant->\"Italic\"]\) / K\>\""}], 
+      "}"}], ",", "0", ",", "100"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+      "Tmax", ",", "600", ",", 
+       "\"\<\!\(\*SubscriptBox[StyleBox[\"T\",FontSlant->\"Italic\"], \
+\"max\"]\) / K\>\""}], "}"}], ",", "0", ",", "1000"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+      "Cvmax", ",", "10", ",", 
+       "\"\<\!\(\*SubscriptBox[StyleBox[\"C\",FontSlant->\"Italic\"], \
+RowBox[{StyleBox[\"V\",FontSlant->\"Italic\"], \" \", \"max\"}]]\) / J \
+\!\(\*SuperscriptBox[\(K\), \(-1\)]\) \!\(\*SuperscriptBox[\(mol\), \(-1\)]\)\
+\>\""}], "}"}], ",", "0", ",", "10"}], "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.855252059553807*^9, 3.8552521081726685`*^9}, {
+  3.8552521449197187`*^9, 3.855252154548915*^9}, {3.855252216441218*^9, 
+  3.8552523014324193`*^9}, {3.855252332430359*^9, 3.855252339896263*^9}, {
+  3.8552524089926186`*^9, 3.855252433286502*^9}},
+ CellLabel->"In[36]:=",ExpressionUUID->"bdc973b5-bcb1-47b2-8b23-cf8699d5eeaf"],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`Cvmax$$ = 10, $CellContext`Tmax$$ = 
+    600, $CellContext`\[Theta]$$ = 50, Typeset`show$$ = True, 
+    Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
+    Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
+    "\"untitled\"", Typeset`specs$$ = {{{
+       Hold[$CellContext`\[Theta]$$], 50, 
+       "\!\(\*StyleBox[\"\[Theta]\",FontSlant->\"Italic\"]\) / K"}, 0, 100}, {{
+       Hold[$CellContext`Tmax$$], 600, 
+       "\!\(\*SubscriptBox[StyleBox[\"T\",FontSlant->\"Italic\"], \"max\"]\) \
+/ K"}, 0, 1000}, {{
+       Hold[$CellContext`Cvmax$$], 10, 
+       "\!\(\*SubscriptBox[StyleBox[\"C\",FontSlant->\"Italic\"], \
+RowBox[{StyleBox[\"V\",FontSlant->\"Italic\"], \" \", \"max\"}]]\) / J \
+\!\(\*SuperscriptBox[\(K\), \(-1\)]\) \!\(\*SuperscriptBox[\(mol\), \
+\(-1\)]\)"}, 0, 10}}, Typeset`size$$ = {576., {140., 146.}}, 
+    Typeset`update$$ = 0, Typeset`initDone$$, Typeset`skipInitDone$$ = True}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, 
+      "Variables" :> {$CellContext`Cvmax$$ = 10, $CellContext`Tmax$$ = 
+        600, $CellContext`\[Theta]$$ = 50}, "ControllerVariables" :> {}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> Show[
+        Plot[{
+          Derivative[
+          1][$CellContext`Cv][$CellContext`\[Theta]$$, $CellContext`T], 
+          $CellContext`Cvlim[$CellContext`\[Theta]$$, $CellContext`T]}, \
+{$CellContext`T, 0, $CellContext`Tmax$$}, 
+         PlotRange -> {{0, $CellContext`Tmax$$}, {0, $CellContext`Cvmax$$}}, 
+         AxesLabel -> {
+          "\!\(\*StyleBox[\"T\",FontSlant->\"Italic\"]\) / K", 
+           "\!\(\*StyleBox[SubscriptBox[StyleBox[\"C\",FontSlant->\"Italic\"],\
+ \"V\"],FontSlant->\"Italic\"]\) / J \!\(\*SuperscriptBox[\(K\), \(-1\)]\) \!\
+\(\*SuperscriptBox[\(mol\), \(-1\)]\)"}, PlotStyle -> {{Black, 
+            AbsoluteThickness[1]}, {Blue, 
+            AbsoluteThickness[1], 
+            AbsoluteDashing[2]}}, PlotLabel -> 
+         "Temperature dependence of the heat capacity for a multi-level \
+system", PlotLegends -> {
+          "\!\(\*StyleBox[SubscriptBox[StyleBox[\"C\",FontSlant->\"Italic\"], \
+\"V\"],FontSlant->\"Italic\"]\)", 
+           "\!\(\*SubscriptBox[StyleBox[\"C\",FontSlant->\"Italic\"], \
+RowBox[{StyleBox[\"V\",FontSlant->\"Italic\"], \" \", \"limit\"}]]\)"}], 
+        Graphics[{Red, 
+          
+          Line[{{$CellContext`\[Theta]$$, 
+             0}, {$CellContext`\[Theta]$$, $CellContext`Cvmax$$}}]}]], 
+      "Specifications" :> {{{$CellContext`\[Theta]$$, 50, 
+          "\!\(\*StyleBox[\"\[Theta]\",FontSlant->\"Italic\"]\) / K"}, 0, 
+         100}, {{$CellContext`Tmax$$, 600, 
+          "\!\(\*SubscriptBox[StyleBox[\"T\",FontSlant->\"Italic\"], \"max\"]\
+\) / K"}, 0, 
+         1000}, {{$CellContext`Cvmax$$, 10, 
+          "\!\(\*SubscriptBox[StyleBox[\"C\",FontSlant->\"Italic\"], \
+RowBox[{StyleBox[\"V\",FontSlant->\"Italic\"], \" \", \"max\"}]]\) / J \
+\!\(\*SuperscriptBox[\(K\), \(-1\)]\) \!\(\*SuperscriptBox[\(mol\), \
+\(-1\)]\)"}, 0, 10}}, "Options" :> {}, "DefaultOptions" :> {}],
+     ImageSizeCache->{639., {278., 286.}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellChangeTimes->{
+  3.8552523081468544`*^9, 3.85525234156945*^9, {3.855252485823552*^9, 
+   3.855252512926463*^9}, 3.8552568940306177`*^9, {3.8552598915039268`*^9, 
+   3.855259906714199*^9}},
+ CellLabel->"Out[36]=",ExpressionUUID->"04061502-a4b4-4e31-bea1-f02f8e3f66c5"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Questions", "Subsection",
+ CellChangeTimes->{{3.855257125748331*^9, 
+  3.8552571273379345`*^9}},ExpressionUUID->"01b3a196-bb64-4102-ac54-\
+2477a124f1c1"],
+
+Cell["\<\
+1.
+T << \[Theta]:
+- q tends to g0, only lower level occupied
+- U tends to 0, lower level has zero energy
+- Cv tends to 0, higher energy level is too high to occupy
+
+T >> \[Theta]:
+- q tends to g0+g1, spacing of levels is much smaller than kT so they are \
+equally occupied
+- U tends to a maximum, levels equally occupied, value depends on g1:g0
+- Cv tends to 0, no further levels to occupy
+
+2.
+T << \[Theta]:
+- q tends to 1, only lower level occupied
+- U tends to 0, lower level has zero energy
+- Cv tends to 0, higher energy level is too high to occupy
+
+T >> \[Theta]:
+- q increases linearly, infinite levels with spacing < kT
+- U increases linearly, higher and higher levels can be occupied at higher \
+temperatures, approaching equipartition principle
+- Cv tends to R, spacing much lower than kT, approaching equipartition \
+principle
+
+3.
+q and U:
+- Two-level system has a rapid increase approaching T = \[Theta], followed by \
+a plateau at T > \[Theta], whilst multi-level system increases gradually to T \
+= \[Theta], followed by steeper linear increase at T > \[Theta]. Due to \
+finite nature of two-level system - there is a limit on the internal energy.
+
+Cv:
+- Two-level system tends to zero at both low and high temperatures, whilst \
+multi-level system rises rapidly to T = \[Theta], followed by a plateau at T \
+> \[Theta]. Due to the multi-level system internal energy increasing at a \
+constant rate as more levels become occupied.\
+\>", "Text",
+ CellChangeTimes->{{3.855257133891927*^9, 3.8552571363363705`*^9}, {
+  3.855257205112923*^9, 3.855257224384381*^9}, {3.8552572713734818`*^9, 
+  3.855257376664937*^9}, {3.855257431061322*^9, 3.8552574545245886`*^9}, {
+  3.8552574920246267`*^9, 3.8552576577242217`*^9}, {3.8552577351948156`*^9, 
+  3.855257891466569*^9}, {3.855257926233631*^9, 3.8552579310468707`*^9}, {
+  3.8552580059558053`*^9, 3.855258060699276*^9}, {3.8552580931785603`*^9, 
+  3.855258140145224*^9}, {3.855258189125842*^9, 3.8552582236639256`*^9}, {
+  3.8552584055458*^9, 3.8552584715949965`*^9}, {3.8552585085613766`*^9, 
+  3.855258638434388*^9}, {3.8552586851419973`*^9, 3.8552589003471127`*^9}, {
+  3.855258959038732*^9, 3.8552589621512976`*^9}, {3.8552590359882298`*^9, 
+  3.855259048697335*^9}, {3.8552591310441895`*^9, 3.855259404192233*^9}, {
+  3.855259445798506*^9, 3.8552595303000917`*^9}, {3.8552595871075997`*^9, 
+  3.855259823051402*^9}},ExpressionUUID->"865b3f2c-0fb3-4d29-a4d5-\
+7825847fd25d"]
+}, Open  ]]
+},
+WindowSize->{1366, 685},
+WindowMargins->{{-8, Automatic}, {Automatic, -8}},
+PrintingCopies->1,
+PrintingPageRange->{32000, 32000},
+PrintingOptions->{"Magnification"->1.,
+"PaperOrientation"->"Portrait",
+"PaperSize"->{595.2755905511812, 841.8897637795276}},
+Magnification:>1.25 Inherited,
+FrontEndVersion->"12.3 for Microsoft Windows (64-bit) (July 9, 2021)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"a9f15a72-0a7c-4090-870c-283ecac32716"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 164, 3, 67, "Subsection",ExpressionUUID->"7a1b6c6d-8dfe-4e10-a656-472e5b501f88"],
+Cell[CellGroupData[{
+Cell[769, 29, 571, 12, 36, "Input",ExpressionUUID->"ae6526b9-4649-4cf8-83be-17755da64331"],
+Cell[1343, 43, 432, 10, 49, "Output",ExpressionUUID->"9dc8b2dc-23ce-4c39-b266-5e0d6b75417e"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[1812, 58, 730, 18, 64, "Input",ExpressionUUID->"baf5b340-a447-4564-8172-2bd0b26ff6d5"],
+Cell[2545, 78, 580, 14, 83, "Output",ExpressionUUID->"e3cfdf4e-aee9-44a0-b239-ea1bb446cbf9"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3162, 97, 472, 11, 36, "Input",ExpressionUUID->"98cfa558-5cee-4e8a-9d44-5effc9f33ca6"],
+Cell[3637, 110, 1278, 37, 95, "Output",ExpressionUUID->"9840c34d-c032-4d07-8a13-e5ec83e85456"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[4952, 152, 4471, 103, 109, "Input",ExpressionUUID->"3da60793-d344-47f8-938e-386b1fa54cee"],
+Cell[9426, 257, 4069, 80, 735, "Output",ExpressionUUID->"04faba4e-e31a-4617-965c-cc7421a3a243"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[13532, 342, 3260, 87, 126, "Input",ExpressionUUID->"e560330a-3b1d-4bb7-bab0-52225c873ee0"],
+Cell[16795, 431, 4227, 82, 737, "Output",ExpressionUUID->"8a807f5e-6468-41d7-a529-9442afe49280"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[21059, 518, 3327, 87, 126, "Input",ExpressionUUID->"f50d85dd-5597-4e83-9f58-5b9fd46a6c9b"],
+Cell[24389, 607, 4317, 83, 721, "Output",ExpressionUUID->"49896ee7-306c-4465-b40f-56880cd1d100"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[28755, 696, 168, 3, 67, "Subsection",ExpressionUUID->"1f2296a3-6624-41e0-b295-5715ef6464d1"],
+Cell[CellGroupData[{
+Cell[28948, 703, 529, 13, 68, "Input",ExpressionUUID->"b141f951-3fc2-4d33-84db-c754377df83e"],
+Cell[29480, 718, 351, 8, 69, "Output",ExpressionUUID->"427fe6d1-5fa8-44fc-8462-9ba88fc84471"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[29868, 731, 736, 20, 64, "Input",ExpressionUUID->"7072c7b5-89e5-47a9-8614-2125a0c868bc"],
+Cell[30607, 753, 539, 13, 80, "Output",ExpressionUUID->"7abae798-8c83-4ea2-8198-f9977a5deef6"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[31183, 771, 465, 12, 36, "Input",ExpressionUUID->"d20b8535-c955-4483-b701-fbdfa75d474f"],
+Cell[31651, 785, 1095, 32, 95, "Output",ExpressionUUID->"af071965-533b-4c34-ab94-243898264cf6"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[32783, 822, 288, 6, 36, "Input",ExpressionUUID->"1cb7eec2-2566-4fa6-818b-178dd0a8d7c6"],
+Cell[33074, 830, 245, 4, 60, "Output",ExpressionUUID->"69194012-0de2-411d-b82c-c1db8c641eb7"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[33356, 839, 339, 7, 36, "Input",ExpressionUUID->"b4918d8f-6571-4735-a99b-5c9a2ae4c881"],
+Cell[33698, 848, 248, 4, 41, "Output",ExpressionUUID->"28ce25e4-986c-4415-af31-47074e630f23"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[33983, 857, 266, 5, 36, "Input",ExpressionUUID->"468436f5-339d-4283-a312-3a767952870b"],
+Cell[34252, 864, 228, 3, 41, "Output",ExpressionUUID->"84ef1302-78e8-4747-94b7-156920111113"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[34517, 872, 3163, 85, 133, "Input",ExpressionUUID->"458760a2-4dd1-4810-be25-6bf1228577a5"],
+Cell[37683, 959, 3735, 74, 605, "Output",ExpressionUUID->"7fbfd320-6bdb-44d6-b3f6-adc2cf1597a1"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[41455, 1038, 3351, 88, 150, "Input",ExpressionUUID->"72177fd0-7a0b-40be-a132-a6e94401cf5b"],
+Cell[44809, 1128, 3903, 76, 601, "Output",ExpressionUUID->"f17984f0-33c7-4f6d-b8d1-a598c5a289aa"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[48749, 1209, 3605, 91, 150, "Input",ExpressionUUID->"bdc973b5-bcb1-47b2-8b23-cf8699d5eeaf"],
+Cell[52357, 1302, 4050, 77, 587, "Output",ExpressionUUID->"04061502-a4b4-4e31-bea1-f02f8e3f66c5"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[56456, 1385, 159, 3, 67, "Subsection",ExpressionUUID->"01b3a196-bb64-4102-ac54-2477a124f1c1"],
+Cell[56618, 1390, 2445, 52, 878, "Text",ExpressionUUID->"865b3f2c-0fb3-4d29-a4d5-7825847fd25d"]
+}, Open  ]]
+}
+]
+*)
+
